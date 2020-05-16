@@ -1,0 +1,26 @@
+{
+  "name": "inception",
+  "version": "1.0.0",
+  "description": "A coubs puller that uses js, node and axios",
+  "main": "experiment.js",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "coub",
+    "coubs",
+    "puller",
+    "json",
+    "javascript",
+    "js",
+    "node",
+    "npm",
+    "axios"
+  ],
+  "author": "v4ltages",
+  "license": "ISC"
+}
