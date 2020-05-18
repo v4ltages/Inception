@@ -26,26 +26,36 @@ readline.question(`Insert a Coub ID: `, (CoubID) => {
                                 console.log(`Overwriting ./output/${CoubName}.mp4`);
                             });
                         }
-                        const { exec } = require("child_process");
-                        ffprobeclient('./temp/videofile.mp4')
-                            .then(vfd => console.log(`Video file duration: `+vfd.format.duration))
-                            .catch(err => console.error(err));
-                        ffprobeclient('./temp/audiofile.mp3')
-                            .then(afd => console.log(`Audio file duration: `+afd.format.duration))
-                            .catch(err => console.error(err));
-                        var ffmpegloops = Math.floor(afd.format.duration/vfd.format.duration)
-                        ffmpegloops = ffmpegloops.replace()
-                        exec(`ffmpeg -i ./temp/videofile.mp4 -i ./temp/audiofile.mp3 "./output/${CoubName}.mp4"`, (error, stdout, stderr) => {
-                            if (error) {
-                                console.log(`error: ${error.message}`);
-                                return;
-                            }
-                            if (stderr) {
-                                console.log(`stderr: ${stderr}`);
-                                return;
-                            }
-                            console.log(`stdout: ${stdout}`);
-                        });
+
+                        ffprobeclient('./temp/videofile.mp4').then(vf => {
+                            ffprobeclient('./temp/audiofile.mp3').then(af => {
+                                console.log(`Video duration: ${vf.format.duration} and audio duration: ${af.format.duration}`);
+                                let ffmpegla = (Math.floor(af.format.duration/vf.format.duration));
+                                const afd = Number.parseFloat(af.format.duration).toFixed (0);
+                                ffmpegla = ffmpegla.toString().replace(/\,.+/g,"$'");
+                                let frameRateAvg= (vf.streams.find(e => e.codec_type === "video") || {}).avg_frame_rate
+                                frameRateAvg = Number.parseInt(frameRateAvg.split(`/`)[0])
+                                const vff = Math.floor(vf.format.duration*frameRateAvg).toFixed (0);
+                                console.log(`Average framerate is: ${frameRateAvg}`)
+                                console.log(`Will loop around ${ffmpegla} times`);
+                                console.log(`There is around ${vff} frames`)
+                                const { exec } = require("child_process");
+                                exec(`ffmpeg -i ./temp/videofile.mp4 -i ./temp/audiofile.mp3 -filter_complex loop=loop=${ffmpegla}:size=${vff}:start=0 -t ${afd} "./output/${CoubName}.mp4"`, (error, stdout, stderr) => {
+                                    if (error) {
+                                        console.log(`error: ${error.message}`);
+                                        return;
+                                    }
+                                    if (stderr) {
+                                        console.log(`stderr: ${stderr}`);
+                                        return;
+                                    }
+                                    console.log(`stdout: ${stdout}`);
+                                });
+                            })
+                            .catch(err => console.error(err))
+                        })
+                        .catch(err => console.error(err))
+
                     })
                 });
             })
