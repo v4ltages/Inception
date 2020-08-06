@@ -10,7 +10,11 @@ const readline = require('readline').createInterface({
 
 const videofile = fs.createWriteStream(`./temp/videofile.mp4`);
 const audiofile = fs.createWriteStream(`./temp/audiofile.mp3`);
-readline.question(`Insert a Coub ID: `, (CoubID) => {
+readline.question(`Insert a Coub ID or a Coub link: `, (CoubID) => {
+    let CoubLink = CoubID.includes(`https://coub.com/view/`)
+    if (CoubLink) {
+        CoubID = CoubID.replace(`https://coub.com/view/`, ``)
+    }
     axios.get(`https://coub.com/api/v2/coubs/`+CoubID).then(response => {
         var CoubName = (response.data.title)
         // CoubName = CoubName.replace(/\s+/g, ''); // Remove's all spacing in the string of CoubName
