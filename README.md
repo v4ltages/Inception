@@ -55,7 +55,7 @@ Output would look like this
 Insert a Coub ID:
 ```
 > ~~The program only takes the ID of the Coub and not the full link. 
-This feature will be added in the future.~~
+This feature will be added in the future.~~ See commit [d1eb2f6](https://github.com/v4ltages/Inception/commit/d1eb2f637881d64782299c0af34e51b9675b69af)
 
 ```
 Insert a Coub ID: 2hg87j
