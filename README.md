@@ -54,8 +54,8 @@ Output would look like this
 ```
 Insert a Coub ID:
 ```
-> The program only takes the ID of the Coub and not the full link. 
-This feature will be added in the future.
+> ~~The program only takes the ID of the Coub and not the full link. 
+This feature will be added in the future.~~
 
 ```
 Insert a Coub ID: 2hg87j
