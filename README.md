@@ -4,7 +4,7 @@ A coub downloader (CLI) and dynamic encoder that uses [JavaScript](https://en.wi
 [![GitHub](https://img.shields.io/github/languages/top/v4ltages/Inception)](https://en.wikipedia.org/wiki/JavaScript)
 ![npm](https://img.shields.io/npm/v/axios?label=axios)
 ![npm](https://img.shields.io/npm/v/ffprobe-client?label=ffprobe-client)
-
+![GitHub](https://img.shields.io/github/license/v4ltages/Inception)
 
 ### Table of Contents
 * **[Installation](#installation)**<br>
