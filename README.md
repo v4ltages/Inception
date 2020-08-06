@@ -10,7 +10,8 @@ A coub downloader (CLI) and dynamic encoder that uses [JavaScript](https://en.wi
 * **[Installation](#installation)**<br>
   - [Linux](#linux)<br>
 * **[Usage](#usage)**<br>
-
+  - [Example](#example)<br>
+  
 ## Installation
 ### Linux
 > This was made for Ubuntu/Debian based distributions in mind, but any other distributions should also work if they have the FFmpeg and NodeJS packages available.
@@ -45,3 +46,25 @@ mkdir output temp
 
 ## Usage
 
+To use the program type
+```
+node .
+```
+Output would look like this
+```
+Insert a Coub ID:
+```
+> The program only takes the ID of the Coub and not the full link. 
+This feature will be added in the future.
+
+```
+Insert a Coub ID: 2hg87j
+Video duration: 7.480000 and audio duration: 59.872653
+Average framerate is: 25
+Will loop around 8 times
+There is around 187 frames
+```
+> Will output information about the video duration, audio duration, average framerate and frames.  It will use this information to calculate the amount of times the video will be looped.
+
+### Example
+![usageexample](https://github.com/v4ltages/Inception/blob/master/Example/usageexample.gif)
