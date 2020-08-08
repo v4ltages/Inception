@@ -11,7 +11,8 @@ A coub downloader (CLI) and dynamic encoder that uses [JavaScript](https://en.wi
   - [Linux](#linux)<br>
 * **[Usage](#usage)**<br>
   - [Example](#example)<br>
-  
+* **[License](#license)**<br>
+
 ## Installation
 ### Linux
 > This was made for Ubuntu/Debian based distributions in mind, but any other distributions should also work if they have the FFmpeg and NodeJS packages available.
@@ -68,3 +69,8 @@ There is around 187 frames
 
 ### Example
 ![usageexample](https://github.com/v4ltages/Inception/blob/master/Example/usageexample.gif)
+
+### License
+This project uses the MIT license.
+
+Read the [LICENSE.md](https://github.com/v4ltages/Inception/blob/master/LICENSE.md) file to learn more.
