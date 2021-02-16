@@ -1,4 +1,4 @@
-const axios = require('axios')
+const axios = require('axios');
 const https = require('https');
 const fs = require('fs');
 const ffprobeclient = require('ffprobe-client')
