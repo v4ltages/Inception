@@ -4,7 +4,7 @@
   "description": "A coubs puller that uses js, node and axios",
   "main": "experiment.js",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "ffprobe-client": "^1.1.6"
   },
   "devDependencies": {},
