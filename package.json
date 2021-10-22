@@ -2,7 +2,8 @@
   "name": "inception",
   "version": "1.0.0",
   "description": "A coubs puller that uses js, node and axios",
-  "main": "experiment.js",
+  "main": "index.js",
+  "private": "true",
   "dependencies": {
     "axios": "^0.21.1",
     "ffprobe-client": "^1.1.6"
@@ -23,5 +24,5 @@
     "axios"
   ],
   "author": "v4ltages",
-  "license": "ISC"
+  "license": "MIT"
 }
