@@ -63,16 +63,17 @@ if (isPlatform === "darwin" || "linux") {
                             if (UserInput == 'yes' || UserInput == 'Yes' || UserInput == 'y' || UserInput == 'Y') {
                                 console.log(`\n[This will take a few minutes depending on ur hardware...]`)
                                 const { exec } = require("child_process");
-                                exec(`ffmpeg -i ./temp/videofile.mp4 -i ./temp/audiofile.mp3 -filter_complex loop=loop=${ffmpegloopamount}:size=${vfileframes}:start=0 -t ${afileduration} "./output/${title}.mp4"`, (error, stdout, stderr) => {
+                                exec(`ffmpeg -i ./.temp/videofile.mp4 -i ./.temp/audiofile.mp3 -filter_complex loop=loop=${ffmpegloopamount}:size=${vfileframes}:start=0 -t ${afileduration} "./output/${title}.mp4"`, (error, stdout, stderr) => {
                                     if (error) {
                                         console.log(`error: ${error.message}`);
-                                        return;
+                                        process.exit();
                                     }
                                     if (stderr) {
                                         console.log(`stderr: ${stderr}`);
-                                        return;
+                                        process.exit();
                                     }
                                     console.log(`stdout: ${stdout}`);
+                                    process.exit();
                                 })
                             }
                             else {
@@ -89,17 +90,17 @@ if (isPlatform === "darwin" || "linux") {
                                         console.log(`Video duration for ${ffmpegloopamount} loops will be ${videoduration} seconds.`)
                                         console.log(`\n[This will take a few minutes depending on ur hardware...]`)
                                         const { exec } = require("child_process");
-                                        exec(`ffmpeg -i ./temp/videofile.mp4 -i ./temp/audiofile.mp3 -filter_complex loop=loop=${ffmpegloopamount}:size=${vfileframes}:start=0 -t ${videoduration} "./output/${title}.mp4"`, (error, stdout, stderr) => {
+                                        exec(`ffmpeg -i ./.temp/videofile.mp4 -i ./.temp/audiofile.mp3 -filter_complex loop=loop=${ffmpegloopamount}:size=${vfileframes}:start=0 -t ${videoduration} "./output/${title}.mp4"`, (error, stdout, stderr) => {
                                             if (error) {
                                                 console.log(`error: ${error.message}`);
-                                                process.exit()
+                                                return;
                                             }
                                             if (stderr) {
                                                 console.log(`stderr: ${stderr}`);
-                                                process.exit()
+                                                return;
                                             }
                                             console.log(`stdout: ${stdout}`)
-                                            process.exit()
+                                            return;
                                         })
                                     }
                                 })
