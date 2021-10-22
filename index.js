@@ -47,8 +47,8 @@ if (isPlatform === "darwin" || "linux") {
             let title = (APIdata.data.title)
             // To reduce reusing of the same code, the video encoding process is made into a function
             function video_encoding() {
-                ffprobeclient('./temp/videofile.mp4').then(vfile => {
-                    ffprobeclient('./temp/audiofile.mp3').then(afile => {
+                ffprobeclient('./.temp/videofile.mp4').then(vfile => {
+                    ffprobeclient('./.temp/audiofile.mp3').then(afile => {
                         console.log(`Video duration: ${vfile.format.duration} and audio duration: ${afile.format.duration}`);
                         let ffmpegloopamount = (Math.floor(afile.format.duration/vfile.format.duration));
                         const afileduration = Number.parseFloat(afile.format.duration).toFixed (0);
