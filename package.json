@@ -8,7 +8,6 @@
     "axios": "^0.21.1",
     "ffprobe-client": "^1.1.6"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
