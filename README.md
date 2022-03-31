@@ -1,4 +1,6 @@
 # Inception - a Coub downloader
+Notice: This has been archived due to Coub shutting down operations on April 1st, 2022
+
 A coub downloader (CLI) and dynamic encoder that uses [JavaScript](https://en.wikipedia.org/wiki/JavaScript), [Nodejs](https://nodejs.org), [Axios](https://www.npmjs.com/package/axios), [FFmpeg](https://ffmpeg.org/), [ffprobe-client](https://www.npmjs.com/package/ffprobe-client).
 
 [![GitHub](https://img.shields.io/github/languages/top/v4ltages/Inception)](https://en.wikipedia.org/wiki/JavaScript)
